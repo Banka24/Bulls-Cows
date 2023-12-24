@@ -11,12 +11,13 @@ namespace BullsAndCows
     public partial class MainPage : ContentPage
     {
         private int _numberAI;
+        private Random _random;
         
         public MainPage()
         {
             InitializeComponent();
-            Random random = new Random();
-            _numberAI = random.Next(1000, 9999);
+            _random = new Random();
+            _numberAI = _random.Next(1000, 9999);
         }
 
         //Проверка, находятся ли одинаковы числа на одном месте
