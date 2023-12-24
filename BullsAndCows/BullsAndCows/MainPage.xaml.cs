@@ -78,12 +78,25 @@ namespace BullsAndCows
             int cows = GetCows(numberUser);
 
             CowEntry.Text = $"{cows}";
-            BullEntry.Text = $"{bulls}\nЧисло компьютера: {_numberAI}";
+            BullEntry.Text = $"{bulls}";
         }
 
         private void CancelButton_Clicked(object sender, EventArgs e)
         {
             NumberEntry.Text = "";
+        }
+
+        private void DebugChecBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (DebugChecBox.IsChecked)
+            {
+                AnswerNumber.IsEnabled = true;
+                AnswerNumber.Text = $"{_numberAI}";
+            }
+            else
+            {
+                AnswerNumber.Text = "";
+            }
         }
     }
 }

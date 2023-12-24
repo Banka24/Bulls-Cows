@@ -5,29 +5,44 @@
 
     <StackLayout>
         <Grid>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
                 <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <Label Text="Введите число" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Entry x:Name="NumberEntry" Grid.Column="1"/>
+            
             <StackLayout Margin="0, 90" Grid.Row="1">
                 <Image Source="bull.png"/>
                 <Image Source="cow.png"/>
             </StackLayout>
+            
             <StackLayout Margin="0, 90" Grid.Row="1" Grid.Column="1">
                 <Entry x:Name="BullEntry" IsReadOnly="True"/>
                 <Entry x:Name="CowEntry" Margin="0, 30" IsReadOnly="True"/>
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center">
                 <Button x:Name="CompliteButton" Text="ОК" Clicked="CompliteButton_Clicked"/>
                 <Button x:Name="CancelButton" Text="Cancel" Clicked="CancelButton_Clicked"/>
             </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" Margin="0, 20" Grid.Row="3" Grid.ColumnSpan="2">
+                <Label Text="Узнать число компьютера(будет нечестно!)"/>
+                <CheckBox x:Name="DebugChecBox" CheckedChanged="DebugChecBox_CheckedChanged"/>
+            </StackLayout>
+            
+            <Label x:Name="AnswerNumber" Grid.Row="4" Grid.ColumnSpan="2" TextColor="Black" IsEnabled="False"/>
         </Grid>
     </StackLayout>
 
