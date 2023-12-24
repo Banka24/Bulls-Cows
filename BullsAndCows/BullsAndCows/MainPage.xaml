@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BullsAndCows.MainPage">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Введите число" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="NumberEntry" Grid.Column="1"/>
+            <StackLayout Margin="0, 90" Grid.Row="1">
+                <Image Source="bull.png"/>
+                <Image Source="cow.png"/>
+            </StackLayout>
+            <StackLayout Margin="0, 90" Grid.Row="1" Grid.Column="1">
+                <Entry x:Name="BullEntry" IsReadOnly="True"/>
+                <Entry x:Name="CowEntry" Margin="0, 30" IsReadOnly="True"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                <Button x:Name="CompliteButton" Text="ОК" Clicked="CompliteButton_Clicked"/>
+                <Button x:Name="CancelButton" Text="Cancel" Clicked="CancelButton_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
